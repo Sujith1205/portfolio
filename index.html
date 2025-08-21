@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bala Sujith Polishetty - AI & Machine Learning Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020412; /* Deep space blue */
+            color: #e0e0e0;
+        }
+        .glass-card {
+            background: rgba(10, 25, 47, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Spotlight effect on hover */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: var(--mouse-y, 50%);
+            left: var(--mouse-x, 50%);
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(56, 189, 248, 0) 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+        .glass-card:hover {
+            background: rgba(10, 25, 47, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+        .skill-tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #7dd3fc;
+            border: 1px solid #38bdf8;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background-color: #38bdf8;
+            color: #020412;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-white mb-2;
+        }
+        .section-subtitle {
+            @apply text-lg text-gray-400 mt-2;
+        }
+        .timeline-dot {
+             @apply absolute w-4 h-4 rounded-full border-4 border-gray-900;
+             background-color: #38bdf8;
+             left: -8px;
+             top: 50%;
+             transform: translateY(-50%);
+        }
+        /* Fade in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black/30 backdrop-blur-md sticky top-0 z-50 border-b border-sky-400/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider">BALA SUJITH P.</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-sky-400 transition-colors">Education</a>
+                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 border-t border-sky-400/20">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-sky-400">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-sky-400">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-sky-400">Projects</a>
+            <a href="#education" class="block py-2 text-gray-300 hover:text-sky-400">Education</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-sky-400">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center min-h-[70vh] flex flex-col justify-center items-center fade-in-section">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-cyan-300">
+                Bala Sujith Polishetty
+            </h1>
+            <p class="text-xl md:text-2xl text-sky-300 font-semibold mb-6">AI & Machine Learning Innovator</p>
+            <p class="max-w-3xl mx-auto text-gray-400 mb-8">
+                Building intelligent systems that solve complex problems. Passionate about leveraging data to create impactful AI-driven solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#projects" class="bg-sky-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-sky-600 transition-all shadow-lg shadow-sky-500/30 w-full sm:w-auto">
+                    View My Work
+                </a>
+                <a href="mailto:sujithpolishetty@gmail.com" class="bg-gray-700/50 text-white font-semibold px-8 py-3 rounded-lg hover:bg-gray-600/50 transition-all border border-gray-600 w-full sm:w-auto">
+                    Contact Me
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 fade-in-section">
+             <div class="text-center mb-12">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">My journey into the world of Artificial Intelligence.</p>
+            </div>
+            <div class="glass-card p-8 md:p-12 rounded-2xl max-w-4xl mx-auto">
+                <p class="text-gray-300 leading-relaxed text-lg text-center">
+                    I am a dedicated and forward-thinking AI/ML student with a robust foundation in computer science and a passion for creating intelligent, data-driven applications. My experience lies in developing end-to-end projects, from conceptualization to deployment. I am driven by the challenge of solving complex problems and am constantly exploring new technologies to enhance my skill set. I believe in the power of collaboration and am eager to contribute my skills to a team that is pushing the boundaries of what's possible with AI.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="section-title">Technical Arsenal</h2>
+                <p class="section-subtitle">The tools and technologies I use to build things.</p>
+            </div>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-semibold mb-6 text-white text-center">Programming & AI/ML</h3>
+                    <div class="flex flex-wrap justify-center">
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Python</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Java</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">C</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">SQL</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Machine Learning</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">NLP</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">DSA</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">DBMS</span>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-semibold mb-6 text-white text-center">Web Development & Frameworks</h3>
+                     <div class="flex flex-wrap justify-center">
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">HTML/CSS</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">React</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Node.js</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Flask</span>
+                        <span class="skill-tag text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="section-title">Featured Project</h2>
+                <p class="section-subtitle">A showcase of my capabilities.</p>
+            </div>
+            <div class="max-w-4xl mx-auto glass-card rounded-2xl overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-white mb-2">Plant Disease Detection using Deep Learning</h3>
+                    <p class="text-sky-400 font-medium mb-6">Python, Flask, TensorFlow/Keras, OpenCV</p>
+                    <ul class="list-none space-y-4 text-gray-300">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Developed a deep learning model using TensorFlow/Keras  to classify plant leaves into healthy or diseased categories with high accuracy.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Utilized Python tools like OpenCV, NumPy, and Albumentations for image resizing, noise removal, and augmentation (rotation, flipping, brightness adjustment) to improve model generalization.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Engineered context-aware chat continuity using SQLite for session management.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Designed a modular, offline-capable architecture for enhanced data privacy and scalability.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="max-w-4xl mx-auto glass-card rounded-2xl overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-white mb-2">AI Based Word AutoComplete using NLP</h3>
+                    <p class="text-sky-400 font-medium mb-6">Python, Flask, TensorFlow/Keras, NLTK, Seaborn, regex</p>
+                    <ul class="list-none space-y-4 text-gray-300">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Implemented deep learning techniques (LSTM based models using TensorFlow) to suggest next words in real-time.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Applied NLP tools (spaCy, NLTK, regex) for tokenization, lemmatization, and cleaning to enhance input data quality.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Measured model efficiency using metrics like perplexity, accuracy, and BLEU score, ensuring reliable word suggestions.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Implemented regex for efficient text cleaning and normalization, improving model robustness.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-sky-400 flex-shrink-0"></i><span>Built a Flask interface allowing users to type text and receive intelligent autocomplete suggestions dynamically.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Academic Timeline</h2>
+                <p class="section-subtitle">My educational foundation.</p>
+            </div>
+            <div class="max-w-2xl mx-auto border-l-2 border-sky-800 pl-8 space-y-12">
+                
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <p class="text-sky-400 text-sm font-semibold">2022 - Present</p>
+                        <h3 class="font-bold text-xl mt-1 text-white">B.Tech, AI & Machine Learning</h3>
+                        <p class="text-gray-400">Siddhartha Institute of Technology and Science</p>
+                        <p class="text-gray-300 font-medium mt-1">CGPA: 7.5</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <p class="text-sky-400 text-sm font-semibold">2020 - 2022</p>
+                        <h3 class="font-bold text-xl mt-1 text-white">Intermediate</h3>
+                        <p class="text-gray-400">SR Junior College</p>
+                        <p class="text-gray-300 font-medium mt-1">Percentage: 92.8%</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <p class="text-sky-400 text-sm font-semibold">2020</p>
+                        <h3 class="font-bold text-xl mt-1 text-white">SSC</h3>
+                        <p class="text-gray-400">Sacred Heart High School</p>
+                        <p class="text-gray-300 font-medium mt-1">GPA: 9.8</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center fade-in-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle mb-8 max-w-2xl mx-auto">I'm actively seeking new opportunities. Let's build the future together.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="mailto:sujithpolishetty@gmail.com" class="text-lg text-gray-300 hover:text-sky-400 transition-colors flex items-center">
+                    <i data-lucide="mail" class="w-5 h-5 mr-3"></i>
+                    sujithpolishetty@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/bala-sujith-polishetty-12jan2005" target="_blank" class="text-lg text-gray-300 hover:text-sky-400 transition-colors flex items-center">
+                    <i data-lucide="linkedin" class="w-5 h-5 mr-3"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-sky-900/50 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 Bala Sujith Polishetty | All rights reserved. Coded with an electric touch.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Spotlight hover effect for glass cards
+        const cards = document.querySelectorAll(".glass-card");
+        cards.forEach(card => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            });
+        });
+        
+        // Scroll-triggered fade-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+
+</body>
+</html>
